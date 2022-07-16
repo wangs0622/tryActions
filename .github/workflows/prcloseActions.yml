@@ -1,0 +1,15 @@
+name: GitHub PR CLOSE Demo
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo close PR
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
